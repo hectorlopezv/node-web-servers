@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import compression from "compression";
 interface ServerOptions{
     port: number;
     publicPath: string;
@@ -18,6 +19,7 @@ export class Server{
     async start(){
 
         // Middlewares
+        this.app.use(compression())
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
         // Routes

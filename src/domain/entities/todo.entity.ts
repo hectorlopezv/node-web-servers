@@ -1,0 +1,26 @@
+export class TodoEntity {
+    constructor(
+        public id: number,
+        public text: string,
+        public completedAt?: Date | null
+    ){}
+
+    get isCompleted(): boolean {
+        return !!this.completedAt;
+    }
+    public static fromObject(obj: {[key: string]:any}): TodoEntity {
+    
+    const {id, text, completedAt} = obj;
+    if(!id) throw new Error("id is required");
+    if(!text) throw new Error("text is required");
+
+    let completedAtDate: Date | null = null;
+    if(completedAt) {
+        completedAtDate = new Date(completedAt);
+        if(isNaN(completedAtDate.getTime())) throw new Error("completedAt is not a valid date");
+    }
+    return new TodoEntity(id, text, completedAtDate);
+    }
+
+    
+}

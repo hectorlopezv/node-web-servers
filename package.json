@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/compression": "^1.7.5",
     "@types/node": "^22.0.0",
     "rimraf": "^6.0.1",
     "ts-node-dev": "^2.0.0",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@prisma/client": "^5.17.0",
     "@types/express": "^4.17.21",
+    "compression": "^1.7.4",
     "express": "^4.19.2",
     "prisma": "^5.17.0"
   }
