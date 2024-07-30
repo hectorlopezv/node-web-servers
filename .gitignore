@@ -1,4 +1,4 @@
 .env
-postgresql/
+postgres/
 node_modules/
 keys/
